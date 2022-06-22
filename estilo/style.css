@@ -1,0 +1,202 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@font-face {
+    font-family: 'Android';
+  src: url('../fontes/idroid.otf') format('opentype');
+  font-weight: normal;
+}
+
+:root {
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after {    /* Todo link da classe externa terá este simbolo depois dele */
+    content: '\00A0\1F517';
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px; /* Altura da box em si não do elemento*/
+    text-align: center;
+    padding-top: 40px; /* Nessa situação em especifico é para criar um espaço entra o h1 e a borda superior do header dando um espaço em branco entre eles//Serve para separar conteudo da borda */
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 20px; /* Margin é um espaço fora da borda, util para separar box uma das outras // Para dar um espaço entre o h1 e o paragrafo */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.425);
+}
+
+header > p {
+    font-family: var(--fonte-padrao);
+    color: white;
+    font-size: 1.2em;
+    max-width: 500px; /* Define o tamanho maximo da box onde o P está contido para que o paragrafo seja quebrado em 2 // é necessario do margin auto para essa config em especifica funcionar*/
+    margin: auto; /* Deixa o texto centralizado independente do tamanho da pagina */
+    margin-bottom: 30px; /* Cria um espaço entre o p e o nav, mas será mais visivel em telas menores */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.425);
+} 
+
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.349);
+}
+
+nav > a {
+    color: var(--cor1);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s; /* Serve para dar uma duração do efeito configurado no hover ao passar o mouse por cima */
+}
+
+nav > a:hover {
+    background-color: var(--cor3);
+    color: var(--cor5);
+}
+
+main {
+    min-width: 300px;
+    max-width: 1000px; /* Indica q quando a tela tiver mais de 800px o conteudo n se adaptara mais, e abaixo desse valor ela sera adaptada até 280px, sem isso o conteudo escrito ficará espalhado */
+    margin: auto;      /* Impede que quando o site for exibido em telas muito grandes ele se expanda infinitamente */
+    padding: 20px;     /* Espaço entre o conteudo do main e a borda */
+    margin-bottom: 30px; /* Da um espaço entre main e footer */
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.459); /* A sombra é medida nessa sequencia: deslocamento horizontal > deslocamento vertical > espalhamento > cor */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main img {
+    width: 100%; /* Faz com que ao se expandir e diminuir o site as imagens se adaptem ao maximo // Ao usar porcentagem, você esta falando para ele ocupar x % da tela ou do main e etc */
+}
+
+main img.pequena{
+    max-width: 350px; /* Define o tamanho maximo que um elemento será exibido, neste caso a img*/
+    display: block; /* Imagens não são consideras blocos, por isso configurações como margin não sao validas, para isso transformamos elas em blocos através do display block e utilizando o margin: auto para centralizala na tela */
+    margin: auto; /* Centraliza a imagem após ela se tornar um bloco */
+}
+
+
+/* As positions e porcentagens são necessarias para centralizar o video na tela, a div em relative e o iframe em absolute */
+div.video {
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 58%;
+    position: relative;
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+main h1 {
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    font-size: 1.8em;
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 8px;
+    font-weight: normal;
+}
+
+main p {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px; /*Espaço da primeira linha do paragrafo*/
+    font-size: 1em;
+    line-height: 2em;  /*altura das linhas // Espaço entre linhas  */
+}
+
+main strong {
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+padding: 2px 6px;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor4);
+}
+
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px; /* O numero negativo faz com que a margem cresça para fora, neste caso em especifico 10 px para fora */
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);
+}
+
+aside > ul {
+    list-style-type: '\2714\00A0\00A0';     /* Acesse emojipedia para colocar simbolos diferentes no inicio da sua lista, O 2714 representa o simbolo escolhido, o 00A0 é um espaço sem quebra de linha (ISSO N É COMPATIVEL COM TODOS OS TIPOS DE COMPUTADOR) */
+    list-style-position: inside;  /* Serve pra manter todos os elementos de uma lista dentro do main */
+    columns: 2; /* Para dividir a lista em colunas */
+
+}
+
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
