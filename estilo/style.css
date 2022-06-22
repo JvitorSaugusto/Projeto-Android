@@ -55,7 +55,7 @@ header > p {
     font-size: 1.2em;
     max-width: 500px; /* Define o tamanho maximo da box onde o P está contido para que o paragrafo seja quebrado em 2 // é necessario do margin auto para essa config em especifica funcionar*/
     margin: auto; /* Deixa o texto centralizado independente do tamanho da pagina */
-    margin-bottom: 30px; /* Cria um espaço entre o p e o nav, mas será mais visivel em telas menores */
+    padding-bottom: 90px; /* Cria um espaço entre o p e o nav, mas será mais visivel em telas menores */
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.425);
 } 
 
